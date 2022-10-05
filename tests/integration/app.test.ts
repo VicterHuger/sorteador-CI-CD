@@ -15,7 +15,7 @@ describe("integration test", () => {
     const { status } = await agent.post("/students").send(students);
     expect(status).toBe(201);
 
-    // side effect
+    // side effect 
     const savedStudent = await prisma.student.findFirst({
       where: {
         name: "Josefina"
