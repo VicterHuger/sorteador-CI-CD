@@ -8,7 +8,7 @@ describe("integration test", () => {
 
   beforeEach(async () => {
     await prisma.student.deleteMany();
-  })
+  });
 
   it("should save a student", async () => {
     const students = { students: [{ name: "Josefina" }] };
