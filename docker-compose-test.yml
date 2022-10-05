@@ -8,8 +8,6 @@ services:
       - 2432: 5432
     env_file:
       - .env.test
-    volumes:
-      - postgres_test:var/lib/postgresql/data
 
   node_app_ci_test:
     container_name: node_app_ci_test
@@ -20,6 +18,3 @@ services:
       - .env.test
     depends_on:
       - db_ci_test
-
-volumes:
-  postgres_test:
