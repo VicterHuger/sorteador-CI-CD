@@ -2,7 +2,7 @@ import express, { json, Request, Response } from "express";
 import prisma from "./database.js";
 
 const app = express();
-app.use(json());
+app.use([json()]);
 
 app.get("/students", async (req: Request, res: Response) => {
   const students = await prisma.student.findMany();
