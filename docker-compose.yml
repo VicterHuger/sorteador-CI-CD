@@ -1,0 +1,25 @@
+services:
+
+  db_cli:
+    image: postgres
+    container_name: db_cli
+    restart: always
+    ports:
+      - 2432:5432
+    env_file:
+      - .env
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+  node_app_cli:
+    container_name: node_app_cli
+    build: .
+    ports:
+      - 5000:5000
+    depends_on:
+      - db_cli
+    env_file:
+      - .env
+
+volumes:
+  postgres:
