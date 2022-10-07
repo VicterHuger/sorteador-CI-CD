@@ -29,8 +29,9 @@ app.get("/students/random", async (req: Request, res: Response) => {
   }
 });
 
-app.get("/hello", async (req: Request, res: Response) => {
-  res status(200).send('Hello!')
+
+app.get("/", async (req: Request, res: Response) => {
+  res.status(200).send('Hello!')
 })
 
 export default app;
